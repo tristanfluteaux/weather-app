@@ -1,0 +1,50 @@
+.green-container {
+  width: 420px;
+  height: 100px;
+  background-color: #134601;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.weath-icon {
+}
+
+.date-container {
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  text-align: center;
+}
+
+.temp {
+  width: 118px;
+  height: 72px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  color: #ffffff;
+  padding-right: 10px;
+}
+
+.day {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+}
+
+.date {
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 18px;
+
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+}
