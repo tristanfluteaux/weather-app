@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const BackButton = () => {
   return (
     <>
-      <NavLink to="/">
+      <NavLink to="/" style={{cursor:"pointer"}}>
         <div className="button-container">
           <img
             src={Arrow}

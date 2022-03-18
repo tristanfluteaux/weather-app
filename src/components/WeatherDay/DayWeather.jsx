@@ -5,15 +5,15 @@ const DayWeather = (props) => {
     <>
       <div className="green-container">
         <img
-          src={`https://openweathermap.org/img/wn/10d4x.png`}
+          src={``}
           alt=""
           className="weath-icon"
         />
         <div className="date-container">
-          <h2 className="day">Mercredi</h2>
-          <p className="date">9 Mars</p>
+          <h2 className="day">{props.WeekDay}</h2>
+          <p className="date">{props.WeekTime}</p>
         </div>
-        <h3 className="temp">°C</h3>
+        <h3 className="temp">{props.props.wind_speed}°C</h3>
       </div>
     </>
   );

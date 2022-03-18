@@ -1,16 +1,12 @@
 import searchIcon from "../../assets/search.svg";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { useLocation } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 import "./Home.css";
 
 const Home = (props) => {
-  let location = useLocation("/");
-  let history = useHistory();
+  const history = useHistory();
 
-  const handleNext = () => {
-    props.getGeocoding(props.location);
-    // history.push("/weather");
+  const hanndleHistory = () => {
+    history.push("/weather");
   };
 
   return (
@@ -30,11 +26,14 @@ const Home = (props) => {
               src={searchIcon}
               alt="search-icon"
               style={{ height: "40px", cursor: "pointer" }}
-              onClick={handleNext()}
+              onClick={() => props.handleNext()}
             />
-              <NavLink to="/weather">
-                <button>lala</button>
-            </NavLink>
+            <img
+              src={searchIcon}
+              alt="search-icon"
+              style={{ height: "40px", cursor: "pointer" }}
+              onClick={() => props.handleWave()}
+            />
           </div>
         </div>
       </div>
