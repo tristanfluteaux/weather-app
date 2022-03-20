@@ -26,13 +26,7 @@ const Home = (props) => {
               src={searchIcon}
               alt="search-icon"
               style={{ height: "40px", cursor: "pointer" }}
-              onClick={() => props.handleNext()}
-            />
-            <img
-              src={searchIcon}
-              alt="search-icon"
-              style={{ height: "40px", cursor: "pointer" }}
-              onClick={() => props.handleWave()}
+              onClick={() => props.getLocation()}
             />
           </div>
         </div>

@@ -1,74 +1,10 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import BackButton from "../../components/button/BackButtonn";
 import CurrentWeather from "../../components/WeatherDay/CurrentWeather";
 import DayWeather from "../../components/WeatherDay/DayWeather";
 import "./WeatherPage.css";
 
-const WeatherPage = (props) => {
-  const { weatherData } = props;
-  let location = useLocation("/weather");
-  const fakeCurrent = [
-    {
-      sunrise: 111000,
-      sunset: 110,
-      humidity: 10,
-      pressure: 10,
-      wind_speed: 10
-    }
-  ]
-  const fake6days = [
-    {
-      sunrise: 111000,
-      sunset: 110,
-      humidity: 10,
-      pressure: 10,
-      wind_speed: 10
-    },
-    {
-      sunrise: 111000,
-      sunset: 110,
-      humidity: 10,
-      pressure: 10,
-      wind_speed: 10
-    },
-    {
-      sunrise: 111000,
-      sunset: 110,
-      humidity: 10,
-      pressure: 10,
-      wind_speed: 10
-    },
-    {
-      sunrise: 111000,
-      sunset: 110,
-      humidity: 10,
-      pressure: 10,
-      wind_speed: 10
-    },
-    {
-      sunrise: 111000,
-      sunset: 110,
-      humidity: 10,
-      pressure: 10,
-      wind_speed: 10
-    },
-    {
-      sunrise: 111000,
-      sunset: 110,
-      humidity: 10,
-      pressure: 10,
-      wind_speed: 10
-    },
-    {
-      sunrise: 111000,
-      sunset: 110,
-      humidity: 10,
-      pressure: 10,
-      wind_speed: 10
-    }
-  ]
+const WeatherPage = ({ weatherData }) => {
+  console.log(weatherData);
 
   const options = { month: "long", day: "numeric" };
   const opt_weekday = { weekday: "long" };
@@ -81,32 +17,48 @@ const WeatherPage = (props) => {
     });
   }
 
-  const currentDate =  weekday + " " + today.toLocaleDateString("fr-FR", options);
+  const currentDate =
+    weekday + " " + today.toLocaleDateString("fr-FR", options);
 
-const WeekDay = (idx) => {
-  const upDate = new Date();
-  upDate.setDate(upDate.getDate() + (idx ));
-  const week = toTitleCase(upDate.toLocaleDateString("fr-FR", opt_weekday));
-  return week
-}
-const WeekTime = (idx) => {
-  const upDate = new Date();
-  upDate.setDate(upDate.getDate() + (idx ));
-  const frDate = upDate.toLocaleDateString("fr-FR", options)
-  return frDate
-}
-
+  const weekDay = (idx) => {
+    const upDate = new Date();
+    upDate.setDate(upDate.getDate() + (idx + 1));
+    const week = toTitleCase(upDate.toLocaleDateString("fr-FR", opt_weekday));
+    return week;
+  };
+  const weekTime = (idx) => {
+    const upDate = new Date();
+    upDate.setDate(upDate.getDate() + (idx + 1));
+    const frDate = upDate.toLocaleDateString("fr-FR", options);
+    return frDate;
+  };
+  console.log(weatherData);
   return (
-    <div style={{ backgroundColor: "Grey", position: "relative", height:"100vh" }}>
-      <BackButton />
-      <h1 className="city">City</h1>
-      {/* {props.weatherData ? <CurrentWeather weatherData={weatherData} /> : null} */}
-      {fakeCurrent && fakeCurrent.map((current, idx) => <CurrentWeather key={idx} props={current} currentDate={currentDate}/>)}
+    <div className="weather-page-background">
+      <div className="city-container">
+        <BackButton />
+        <h1 className="city">{weatherData.cityName}</h1>
+      </div>
+      {weatherData ? (
+        <CurrentWeather
+          weatherData={weatherData.current}
+          currentDate={currentDate}
+        />
+      ) : null}
       <div className="day-container">
-        {/* {weatherData &&
-          weatherData.daily
-            .map((day) => <DayWeather props={day} />)} */}
-        {fake6days && fake6days.map((day, idx) => <DayWeather key={idx} props={day} WeekDay={WeekDay(idx)} WeekTime={WeekTime(idx)}/>)}
+        {weatherData?.daily.map((day, idx) => {
+          if (idx <= 6) {
+            return (
+              <DayWeather
+                key={idx}
+                day={day}
+                weekDay={weekDay(idx)}
+                weekTime={weekTime(idx)}
+              />
+            );
+          }
+          return null;
+        })}
       </div>
     </div>
   );

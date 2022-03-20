@@ -22,4 +22,36 @@
     display: flex;
     justify-content: center;
   }
+
+  .back-btn {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: #134601;
+    border-radius: 50%;
+  }
+  
+  .back-btn > div {
+    position: relative;
+    top: 32%;
+    left: 28%;
+    width: 32.74px;
+    height: 27.4px;
+  }
+}
+
+.back-btn {
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  background-color: #134601;
+  border-radius: 50%;
+}
+
+.back-btn > div {
+  position: relative;
+  top: 32%;
+  left: 28%;
+  width: 32.74px;
+  height: 27.4px;
 }

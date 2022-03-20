@@ -13,6 +13,8 @@
 }
 
 .weath-icon {
+  width: 100px;
+  height: 100px;
 }
 
 .date-container {
@@ -23,13 +25,13 @@
 
 .temp {
   width: 118px;
-  height: 72px;
+  line-height: 72px;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
   color: #ffffff;
-  padding-right: 10px;
+  padding-right: 25px;
 }
 
 .day {
@@ -65,6 +67,8 @@
   }
   
   .weath-icon {
+    width: 80px;
+    height: 80.34px;
   }
   
   .date-container {
