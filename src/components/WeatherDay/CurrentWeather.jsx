@@ -11,10 +11,10 @@ const CurrentWeather = ({weatherData, currentDate}) => {
         <div className="data-container">
           <div className="left-container">
             <p className="data-p">
-              Jour - {weatherData.sunrise} °C
+              Jour - {weatherData.feels_like} °C
             </p>
             <p className="data-p">
-              Nuit - {weatherData.sunset} °C
+              Nuit - {weatherData.feels_like} °C
             </p>
             <p className="data-p">
               Humidité - {weatherData.humidity} %
