@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
 .current-container {
   position: absolute;
   width: 550px;
   height: 281.34px;
   left: 50px;
-  top: 743px;
-  background: rgba(19, 70, 1, 0.8);
+  top: 656px;
+  background: #134601;
   border-radius: 25px 25px 0px 0px;
 }
 
@@ -17,6 +16,7 @@
 
 .title-container {
   display: flex;
+  justify-content: center;
 }
 
 .current-date {
@@ -29,6 +29,12 @@
   width: 100%;
   height: 54px;
   color: #ffffff;
+}
+
+.current-icon {
+  width: 100px;
+  height: 100px;
+  padding-left: 10px;
 }
 
 .left-container {
@@ -50,4 +56,63 @@
   line-height: 27px;
   color: #ffffff;
   margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .current-container {
+    position: absolute;
+    width: 347px;
+    height: 171px;
+    left: 28px;
+    top: 166px;
+    background: #134601;
+    border-radius: 20px;
+  }
+  
+  .data-container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .title-container {
+    display: flex;
+  }
+
+  .current-date {
+    text-align: center;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    width: 100%;
+    height: 36px;
+    color: #ffffff;
+  }
+
+  .current-icon {
+    width: 80px;
+    height: 80.34px;
+  }
+
+  .left-container {
+    display: flex;
+    flex-direction: column;
+    height: 63px;
+  }
+  
+  .right-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .data-p {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    color: #ffffff;
+    margin: 0;
+  }
 }

@@ -5,3 +5,40 @@
   right: 100px;
   top: 72px;
 }
+
+.city {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 72px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .day-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 28px;
+    top: 365px;
+  }
+}
+
+.city-container {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.weather-page-background {
+  height: 100vh;
+  background-image: url("https://cdn.pixabay.com/photo/2018/04/25/09/26/eiffel-tower-3349075_1280.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
